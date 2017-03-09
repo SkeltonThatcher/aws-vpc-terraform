@@ -1,6 +1,6 @@
 # README #
 
-This is a private repo for Terraform scripts to create an AWS VPC.
+Terraform scripts to create an AWS VPC.
 
 The TF plan will create the following resources:
 

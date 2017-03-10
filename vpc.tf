@@ -1,56 +1,54 @@
-#====================
-# VPC + Subnets + IGW
-#====================
+## VPC + Subnets + IGW
 
 resource "aws_vpc" "main" {
-  cidr_block           = "${var.CIDR_PREFIX}.0.0/16"
+  cidr_block           = "${var.VPC1_CIDR_PREFIX}.0.0/16"
   enable_dns_support   = "true"
   enable_dns_hostnames = "true"
 
   tags {
-    Name = "${var.SERVICE_NAME}-vpc"
+    Name = "${var.VPC1_NAME}-vpc"
   }
 }
 
 resource "aws_subnet" "publicA" {
   vpc_id            = "${aws_vpc.main.id}"
-  cidr_block        = "${var.CIDR_PREFIX}.1.0/24"
+  cidr_block        = "${var.VPC1_CIDR_PREFIX}.1.0/24"
   availability_zone = "${var.AWS_REGION}a"
   map_public_ip_on_launch = "true"
 
   tags {
-    Name = "${var.SERVICE_NAME}-publicA"
+    Name = "${var.VPC1_NAME}-publicA"
   }
 }
 
 resource "aws_subnet" "publicB" {
   vpc_id            = "${aws_vpc.main.id}"
-  cidr_block        = "${var.CIDR_PREFIX}.2.0/24"
+  cidr_block        = "${var.VPC1_CIDR_PREFIX}.2.0/24"
   availability_zone = "${var.AWS_REGION}b"
   map_public_ip_on_launch = "true"
 
   tags {
-    Name = "${var.SERVICE_NAME}-publicB"
+    Name = "${var.VPC1_NAME}-publicB"
   }
 }
 
 resource "aws_subnet" "privateA" {
   vpc_id            = "${aws_vpc.main.id}"
-  cidr_block        = "${var.CIDR_PREFIX}.3.0/24"
+  cidr_block        = "${var.VPC1_CIDR_PREFIX}.3.0/24"
   availability_zone = "${var.AWS_REGION}a"
 
   tags {
-    Name = "${var.SERVICE_NAME}-privateA"
+    Name = "${var.VPC1_NAME}-privateA"
   }
 }
 
 resource "aws_subnet" "privateB" {
   vpc_id            = "${aws_vpc.main.id}"
-  cidr_block        = "${var.CIDR_PREFIX}.4.0/24"
+  cidr_block        = "${var.VPC1_CIDR_PREFIX}.4.0/24"
   availability_zone = "${var.AWS_REGION}b"
 
   tags {
-    Name = "${var.SERVICE_NAME}-privateB"
+    Name = "${var.VPC1_NAME}-privateB"
   }
 }
 

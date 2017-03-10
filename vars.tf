@@ -7,8 +7,8 @@ variable "AWS_REGION" {
 
 variable "KEY_NAME" {}
 
-variable "CIDR_PREFIX" {
+variable "VPC1_CIDR_PREFIX" {
   default = "10.50"
 }
 
-variable "SERVICE_NAME" {}
+variable "VPC1_NAME" {}

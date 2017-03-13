@@ -1,14 +1,10 @@
-variable "AWS_ACCESS_KEY" {}
-variable "AWS_SECRET_KEY" {}
+variable "aws_access_key" {}
+variable "aws_secret_key" {}
 
-variable "AWS_REGION" {
+variable "aws_region" {
   default = "eu-west-1"
 }
 
-variable "KEY_NAME" {}
-
-variable "VPC1_CIDR_PREFIX" {
+variable "cidr_prefix" {
   default = "10.50"
 }
-
-variable "VPC1_NAME" {}

@@ -21,6 +21,7 @@ The TF plan will create the following resources:
 
 * Clone the repo
 * Create terraform.tfvars
+* Run terraform init
 * Run terraform plan
 * Run terraform apply
 * Run terraform destroy
